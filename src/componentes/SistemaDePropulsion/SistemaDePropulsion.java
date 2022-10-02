@@ -1,5 +1,9 @@
 package componentes.SistemaDePropulsion;
 
-public abstract class SistemaDePropulsion {
+import componentes.Componente;
 
+public abstract class SistemaDePropulsion implements Componente {
+
+    @Override
+    public abstract double precio();
 }
