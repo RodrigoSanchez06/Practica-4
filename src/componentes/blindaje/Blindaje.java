@@ -1,5 +1,9 @@
 package componentes.blindaje;
 
-public class Blindaje {
+import componentes.Componente;
 
+public abstract class Blindaje implements Componente {
+
+    @Override
+    public abstract double precio();
 }
