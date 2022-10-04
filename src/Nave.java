@@ -50,7 +50,6 @@ public class Nave {
     }
 
     public void muestraNave() {
-        System.out.println("TU NAVE ES LA SIGUIENTE: ");
         for (Componente com : componentes) {
             System.out.println("*********************************");
             System.out.println("Componente: " + com.nombre());

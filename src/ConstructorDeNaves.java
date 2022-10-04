@@ -55,7 +55,7 @@ public class ConstructorDeNaves {
         nave.agregarComponente(colocaBlindaje());
         System.out.println("Ahora toca elegir la cabina que deseas.");
         nave.agregarComponente(colocaCabina());
-        System.out.println("Finalmente el Sustema de propulsión.");
+        System.out.println("Finalmente el Sistema de propulsión.");
         nave.agregarComponente(colocaSistemaDePropulsion());
         return nave;
     }
