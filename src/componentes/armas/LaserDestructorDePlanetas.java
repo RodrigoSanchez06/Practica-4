@@ -36,5 +36,4 @@ public class LaserDestructorDePlanetas extends Armas {
     public double precio() {
         return 2500.0;
     }
-
 }
