@@ -17,8 +17,19 @@ import componentes.cabina.CabinaEjercito;
 import componentes.cabina.CabinaTripulacionPequennia;
 import componentes.cabina.CabinaUnPiloto;
 
+/**
+ * Clase que representa a un constructor de naves espaciales, uniendo todos los
+ * componentes necesarios.
+ */
 public class ConstructorDeNaves {
 
+    /**
+     * Método Builder especifico para la nave individual de combate. Consiste en una
+     * Nave con: laser simple, blindaje simple, cabina de un piloto, y un sistema de
+     * propulsion Intercontinental.
+     * 
+     * @return nave individual de combate.
+     */
     public Nave armaNaveIndividualDeCombate() {
         Nave nave = new Nave();
         nave.agregarComponente(new LaserSimple());
@@ -28,6 +39,13 @@ public class ConstructorDeNaves {
         return nave;
     }
 
+    /**
+     * Método Builder especifico para la nave militar de transporte. Consiste en una
+     * Nave con: misiles de plasma, Blindaje Reforzado, Cabina de tripulación
+     * pequeña y un sistema de propulsión interplanetario.
+     * 
+     * @return nave militar de transporte.
+     */
     public Nave armaNaveMilitarDeTransporte() {
         Nave nave = new Nave();
         nave.agregarComponente(new MisilesDePlasma());
@@ -37,6 +55,13 @@ public class ConstructorDeNaves {
         return nave;
     }
 
+    /**
+     * Método Builder especifico para una base espacial de guerra. Consiste en una
+     * Nave con: Laser destructor de planetas, Blindaje fortaleza, cabina ejercito y
+     * un sistema de propulsión intergaláctico.
+     * 
+     * @return Base espacial de guerra.
+     */
     public Nave armaBaseEspacialDeGuerra() {
         Nave nave = new Nave();
         nave.agregarComponente(new LaserDestructorDePlanetas());
@@ -46,6 +71,12 @@ public class ConstructorDeNaves {
         return nave;
     }
 
+    /**
+     * Método Builder para armar una nave personalizada por el usuario, con cada
+     * componente a su elección.
+     * 
+     * @return Nave personalizada.
+     */
     public Nave armaTuNave() {
         Nave nave = new Nave();
         System.out.println("*****Comenzando Proceso del Armado de tu nave personalizada*****");
@@ -60,10 +91,15 @@ public class ConstructorDeNaves {
         return nave;
     }
 
+    /**
+     * Método que pregunta el tipo de armas que prefiere el usuario.
+     * 
+     * @return tipo de arma que prefiere el usuario.
+     */
     private Armas colocaArmas() {
         Scanner entrada = new Scanner(System.in);
         int opcion;
-        System.out.println("***¿Que Sistema de armas deseas?***"
+        System.out.println("***¿Que Sistema de armas deseas?***" // Pregunta por sistema de armas.
                 + "\n 1 .- Laser Destructor de Planetas."
                 + "\n 2 .- Misiles de plasma."
                 + "\n 3 .- Laser Simple.");
@@ -71,7 +107,7 @@ public class ConstructorDeNaves {
             try {
                 String opcionUsuario = entrada.nextLine();
                 opcion = Integer.parseInt(opcionUsuario);
-                if ((opcion > 0) && (opcion < 4)) {
+                if ((opcion > 0) && (opcion < 4)) { // Válida la opción.
                     break;
                 } else {
                     System.out.println("Ingresa una opcion valida"
@@ -95,14 +131,19 @@ public class ConstructorDeNaves {
         }
     }
 
+    /**
+     * Método que pregunta el tipo de blindaje que prefiere el usuario.
+     * 
+     * @return tipo de blindaje que prefiere el usuario.
+     */
     private Blindaje colocaBlindaje() {
         Scanner entrada = new Scanner(System.in);
         int opcion;
-        System.out.println("***¿Que Sistema de blindaje deseas?***"
+        System.out.println("***¿Que Sistema de blindaje deseas?***" // Pregunta por sistema de blindaje
                 + "\n 1 .- Blindaje Fortaleza."
                 + "\n 2 .- Blindaje Reforzado."
                 + "\n 3 .- Blindaje Simple.");
-        while (true) {
+        while (true) {// Valida opción
             try {
                 String opcionUsuario = entrada.nextLine();
                 opcion = Integer.parseInt(opcionUsuario);
@@ -130,14 +171,19 @@ public class ConstructorDeNaves {
         }
     }
 
+    /**
+     * Método que pregunta el tipo de cabina que prefiere el usuario.
+     * 
+     * @return tipo de cabina que prefiere el usuario.
+     */
     private Cabina colocaCabina() {
         Scanner entrada = new Scanner(System.in);
         int opcion;
-        System.out.println("***¿Que Cabina deseas?***"
+        System.out.println("***¿Que Cabina deseas?***" // Pregunta por tipo de cabina.
                 + "\n 1 .- Cabina ejército."
                 + "\n 2 .- Cabina Tripulacion pequeña."
                 + "\n 3 .- Cambina de un piloto.");
-        while (true) {
+        while (true) {// Valida opcion.
             try {
                 String opcionUsuario = entrada.nextLine();
                 opcion = Integer.parseInt(opcionUsuario);
@@ -165,14 +211,19 @@ public class ConstructorDeNaves {
         }
     }
 
+    /**
+     * Método que pregunta el tipo de propulsión que prefiere el usuario.
+     * 
+     * @return tipo de propulsión que prefiere el usuario.
+     */
     private SistemaDePropulsion colocaSistemaDePropulsion() {
         Scanner entrada = new Scanner(System.in);
         int opcion;
-        System.out.println("***¿Que Cabina deseas?***"
+        System.out.println("***¿Que Cabina deseas?***" // Pregunta por sistema de propulsión
                 + "\n 1 .- Viaje Intergalactico."
                 + "\n 2 .- Viaje Planetario."
                 + "\n 3 .- Viaje Intercontintental.");
-        while (true) {
+        while (true) {// Valida opcion
             try {
                 String opcionUsuario = entrada.nextLine();
                 opcion = Integer.parseInt(opcionUsuario);
