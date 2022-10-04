@@ -2,13 +2,29 @@ import java.util.LinkedList;
 
 import componentes.Componente;
 
+/**
+ * Clase que representa a una nave espacial, que puede poseer distintos
+ * componentes.
+ */
 public class Nave {
+    // Lista de componentes que conforman la nave.
     private LinkedList<Componente> componentes = new LinkedList<Componente>();
 
+    /**
+     * Agrega un componente a la nave.
+     * 
+     * @param comp componente a agregar.
+     */
     public void agregarComponente(Componente comp) {
         this.componentes.add(comp);
     }
 
+    /**
+     * Obtiene el costo total de la nave dependiendo de cada componente y lo
+     * devuelve.
+     * 
+     * @return costo total de la nave.
+     */
     public double obtenCosto() {
         double costo = 0;
         for (Componente com : componentes) {
@@ -17,6 +33,12 @@ public class Nave {
         return costo;
     }
 
+    /**
+     * Obtiene el ataque total de la nave dependiento de cada componente y lo
+     * devuelve.
+     * 
+     * @return ataque total de la nave
+     */
     private double obtenAtaque() {
         double ataque = 0;
         for (Componente com : componentes) {
@@ -25,6 +47,12 @@ public class Nave {
         return ataque;
     }
 
+    /**
+     * Obtiene la defensa total de la nave dependiento de cada componente y la
+     * devuelve.
+     * 
+     * @return defensa total de la nave
+     */
     private double obtenDefensa() {
         double defensa = 0;
         for (Componente com : componentes) {
@@ -33,6 +61,12 @@ public class Nave {
         return defensa;
     }
 
+    /**
+     * Obtiene la velocidad total de la nave dependiento de cada componente y la
+     * devuelve.
+     * 
+     * @return velocidad total de la nave
+     */
     private double obtenVelocidad() {
         double velocidad = 0;
         for (Componente com : componentes) {
@@ -41,6 +75,12 @@ public class Nave {
         return velocidad;
     }
 
+    /**
+     * Obtiene el peso de la nave dependiento de cada componente y la
+     * devuelve.
+     * 
+     * @return peso total de la nave
+     */
     private double obtenPeso() {
         double peso = 0;
         for (Componente com : componentes) {
@@ -49,6 +89,10 @@ public class Nave {
         return peso;
     }
 
+    /**
+     * Muestra cada componente de la nave, y el total de cada una de sus
+     * caracterísiticas
+     */
     public void muestraNave() {
         for (Componente com : componentes) {
             System.out.println("*********************************");

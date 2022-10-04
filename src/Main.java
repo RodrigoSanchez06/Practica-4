@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
+/**
+ * Clase Principal de SpaceShip Builder.
+ */
 public class Main {
     public static void main(String[] args) {
         ConstructorDeNaves constructor = new ConstructorDeNaves();
+        // Colorcitos para terminal.
         final String ANSI_RESET = "\u001B[0m";
         final String ANSI_RED = "\u001B[31m";
         final String ANSI_GREEN = "\u001B[32m";
@@ -12,7 +16,7 @@ public class Main {
         System.out.println("*****BIENVENIDO A Spaceship Builder*****");
         System.out.println("Para comenzar introduce tu presupuesto: ");
         double presupuesto;
-        while (true) {
+        while (true) { // Pregunta presupuesto y lo valida.
             try {
                 String opcionUsuario = entrada.nextLine();
                 presupuesto = Double.parseDouble(opcionUsuario);
@@ -24,13 +28,13 @@ public class Main {
         boolean naveLista = false;
         Nave nave = constructor.armaTuNave();
         do {
-            if (nave.obtenCosto() < presupuesto) {
+            if (nave.obtenCosto() < presupuesto) { // Si el presupuesto es mayor entonces se arma la nave.
                 System.out.println("*****GRACIAS POR ARMAR TU NAVE CON NOSOTROS*****");
                 System.out.println("Tu nave está lista para recoger, estas son sus características: ");
                 nave.muestraNave();
                 System.out.println("PAGA EN CAJA LA CANIDAD DE: " + nave.obtenCosto() + "$");
                 break;
-            } else {
+            } else { // Si no alcanza se dan más opciones.
                 nave.muestraNave();
                 System.out.println("COSTO TOTAL: " + nave.obtenCosto());
                 System.out.println("LO SENTIMOS. El costo de tu nave sobrepasa tu presupuesto :(");
@@ -40,7 +44,7 @@ public class Main {
                         "\n3 .- SALIR");
                 int seleccionBajoPresupuesto;
                 while (true) {
-                    try {
+                    try { // Valida la seleccion de un bajo presupuesto
                         String opcionUsuario = entrada.nextLine();
                         seleccionBajoPresupuesto = Integer.parseInt(opcionUsuario);
                         if ((seleccionBajoPresupuesto > 0) && (seleccionBajoPresupuesto < 4))
@@ -53,10 +57,10 @@ public class Main {
                                 "\n3 .- SALIR");
                     }
                 }
-                if (seleccionBajoPresupuesto == 1) {
+                if (seleccionBajoPresupuesto == 1) { // Diseña otra nave.
                     nave = constructor.armaTuNave();
                     continue;
-                } else if (seleccionBajoPresupuesto == 2) {
+                } else if (seleccionBajoPresupuesto == 2) { // Da a enseñar el catálogo.
                     Nave naveIndividualDeCombate = constructor.armaNaveIndividualDeCombate();
                     Nave naveMilitarDeTransporte = constructor.armaNaveMilitarDeTransporte();
                     Nave BaseEspacialDeGuerra = constructor.armaBaseEspacialDeGuerra();
@@ -103,7 +107,7 @@ public class Main {
                         nave = BaseEspacialDeGuerra;
                     }
                 } else {
-                    naveLista = true;
+                    naveLista = true; // Salir del programa.
                 }
             }
         } while (!naveLista);
